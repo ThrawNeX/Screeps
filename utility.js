@@ -1,9 +1,5 @@
 var utility = {}
 
-utility.test = function() {
-  console.log("TESSSST");
-}
-
 utility.getUpgradersAmount = function() {
   var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
 }
@@ -16,13 +12,11 @@ utility.getHarvestersAmount = function() {
   var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
 }
 
-
 utility.spawnHarverster = function() {
   var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE], undefined, {
     role: 'harvester'
   });
 }
-
 
 utility.spawnBuilder = function() {
   var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE],

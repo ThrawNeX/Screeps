@@ -3,12 +3,21 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var utility = require('utility');
 
+// Main Loop
 module.exports.loop = function() {
+
+  // Spawn Control
+  if (utility.getHarvestersAmount() < 5) {
+    utility.spawnHarverster();
+  } else if (utility.getBuildersAmount() < 1) {
+    utility.spawnUpgrader();
+  } else if (utility.getUpgradersAmount() < 1) {
+    utility.spawnBuilder();
+  }
 
   //Sorgt dafür das Creeps agieren.
   for (var name in Game.creeps) {
     var creep = Game.creeps[name];
-
     if (creep.memory.role == 'harvester') {
       roleHarvester.run(creep);
     }
@@ -23,14 +32,6 @@ module.exports.loop = function() {
   }
 
 
-  //TODO: Sicherstellen das zuerst Harvester spawnen
-
-  utility.test();
-  var harvesterAmount = utility.getHarvestersAmount();
-  var builderAmount = utility.getBuildersAmount();
-  var upgraderAmount = utility.getUpgradersAmount();
-
-
 
   //Spawn Nachricht - unnötig?
   if (Game.spawns['Spawn1'].spawning) {
@@ -43,6 +44,6 @@ module.exports.loop = function() {
       });
   }
 
-  memoryCleaning();
+  utility.garbageCollecting();
 
 }
