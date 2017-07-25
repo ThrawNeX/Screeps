@@ -13,12 +13,14 @@ utility.getHarvestersAmount = function() {
 }
 
 utility.spawnHarverster = function() {
+  console.log("New Harvester");
   var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE], undefined, {
     role: 'harvester'
   });
 }
 
 utility.spawnBuilder = function() {
+  console.log("New Builder");
   var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE],
     undefined, {
       role: 'builder'
@@ -26,6 +28,7 @@ utility.spawnBuilder = function() {
 }
 
 utility.spawnUpgrader = function() {
+  console.log("New Upgrader");
   var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE], undefined, {
     role: 'upgraders'
   });
