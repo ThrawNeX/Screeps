@@ -7,17 +7,17 @@ var utility = require('utility');
 module.exports.loop = function() {
 
   // Spawn Control
-  if (utility.getHarvestersAmount() < 2) {
+  if (utility.getHarvestersAmount() < 5) {
     utility.spawnHarverster();
 
-  } else if (utility.getUpgradersAmount() < 1) {
+  } else if (utility.getUpgradersAmount() < 5) {
     utility.spawnUpgrader();
+  } else if (utility.getBuildersAmount() < 2) {
+    utility.spawnBuilder();
   }
 
   console.log(utility.getUpgradersAmount());
-  //else if (utility.getBuildersAmount() < 1) {
-  //   utility.spawnBuilder();
-  // }
+
 
   //Sorgt dafür das Creeps agieren.
   for (var name in Game.creeps) {
