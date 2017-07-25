@@ -24,6 +24,7 @@ module.exports.loop = function() {
   test();
   spawnControlHarvester();
   spawnControlUpgrader();
+  spawnControlBuilder();
   memoryCleaning();
 
 
@@ -74,6 +75,19 @@ function spawnControlUpgrader() {
     console.log('Spawning new upgraders: ' + newName);
   }
 }
+
+function spawnControlBuilder() {
+  var builders = _.filter(Game.creeps, (creep) => creep.memory.role ==
+    'builder');
+  if (builders.length < 1) {
+    var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE],
+      undefined, {
+        role: 'builder'
+      });
+    console.log('Spawning new Builder: ' + newName);
+  }
+}
+
 
 //Memory cleaning
 // gestorbene Creeps haben noch einen Memory dieser muss gelöscht werden
