@@ -1,5 +1,9 @@
 var utility = {
 
+    function test() {
+      console.log("TESSSST");
+    }
+
     function getUpgradersAmount() {
       var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     }

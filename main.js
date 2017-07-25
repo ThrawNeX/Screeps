@@ -1,7 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
-
+var utility = require('utility');
 
 module.exports.loop = function() {
 
@@ -22,6 +22,11 @@ module.exports.loop = function() {
 
 
   //TODO: Sicherstellen das zuerst Harvester spawnen
+
+  utility.test();
+
+
+
   spawnControlHarvester();
   spawnControlUpgrader();
   spawnControlBuilder();
@@ -41,9 +46,6 @@ module.exports.loop = function() {
 
 
 }
-
-//Memory cleaning
-// gestorbene Creeps haben noch einen Memory dieser muss gelöscht werden
 
 
 
