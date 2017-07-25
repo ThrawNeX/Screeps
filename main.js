@@ -26,13 +26,10 @@ module.exports.loop = function() {
   //TODO: Sicherstellen das zuerst Harvester spawnen
 
   utility.test();
+  var harvesterAmount = utility.getHarvestersAmount();
+  var builderAmount = utility.getBuildersAmount();
+  var upgraderAmount = utility.getUpgradersAmount();
 
-
-
-  spawnControlHarvester();
-  spawnControlUpgrader();
-  spawnControlBuilder();
-  memoryCleaning();
 
 
   //Spawn Nachricht - unnötig?
@@ -46,9 +43,6 @@ module.exports.loop = function() {
       });
   }
 
-
-}
-
-
+  memoryCleaning();
 
 }
