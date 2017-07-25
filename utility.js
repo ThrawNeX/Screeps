@@ -1,7 +1,7 @@
 var utility = {}
 
 utility.getUpgradersAmount = function() {
-  return upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
+  return upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgraders');
 }
 
 utility.getBuildersAmount = function() {
