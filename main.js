@@ -20,10 +20,6 @@ module.exports.loop = function() {
     }
   }
 
-  //Methoden Stack
-  test();
-
-
 
   //TODO: Sicherstellen das zuerst Harvester spawnen
   spawnControlHarvester();
@@ -46,63 +42,9 @@ module.exports.loop = function() {
 
 }
 
-
-function test() {
-  console.log("asdf");
-
-
-}
-
-
-//Sicherstellen das es immer 2 Harvester gibt
-function spawnControlHarvester() {
-  var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role ==
-    'harvester');
-  if (harvesters.length < 2) {
-    var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE],
-      undefined, {
-        role: 'harvester'
-      });
-    console.log('Spawning new harvester: ' + newName);
-  }
-}
-
-//Sicherstellen das es immer einen Upgrader gibt.
-function spawnControlUpgrader() {
-  var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role ==
-    'upgrader');
-  if (upgraders.length < 1) {
-    var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE],
-      undefined, {
-        role: 'upgraders'
-      });
-    console.log('Spawning new upgraders: ' + newName);
-  }
-}
-
-//Sicherstellen das es immer einen Builder gibt.
-function spawnControlBuilder() {
-  var builders = _.filter(Game.creeps, (creep) => creep.memory.role ==
-    'builder');
-  if (builders.length < 1) {
-    var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE],
-      undefined, {
-        role: 'builder'
-      });
-    console.log('Spawning new Builder: ' + newName);
-  }
-}
-
-
 //Memory cleaning
 // gestorbene Creeps haben noch einen Memory dieser muss gelöscht werden
-function memoryCleaning() {
-  for (var name in Memory.creeps) {
-    if (!Game.creeps[name]) {
-      delete Memory.creeps[name];
-      console.log('Clearing non-existing creep memory:', name);
-    }
-  }
+
 
 
 }

@@ -13,7 +13,7 @@ var roleHarvester = {
       }
     } else {
 
-      // erstellt Liste mit den Strukturen im raum 
+      // erstellt Liste mit den Strukturen im raum
       var targets = creep.room.find(FIND_STRUCTURES, {
         filter: (structure) => {
           return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType ==
