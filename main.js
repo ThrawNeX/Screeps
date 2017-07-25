@@ -5,7 +5,6 @@ var roleBuilder = require('role.builder');
 
 module.exports.loop = function() {
 
-
   //Sorgt dafür das Creeps agieren.
   for (var name in Game.creeps) {
     var creep = Game.creeps[name];
@@ -21,7 +20,12 @@ module.exports.loop = function() {
     }
   }
 
+  //Methoden Stack
   test();
+
+
+
+  //TODO: Sicherstellen das zuerst Harvester spawnen
   spawnControlHarvester();
   spawnControlUpgrader();
   spawnControlBuilder();
@@ -76,6 +80,7 @@ function spawnControlUpgrader() {
   }
 }
 
+//Sicherstellen das es immer einen Builder gibt.
 function spawnControlBuilder() {
   var builders = _.filter(Game.creeps, (creep) => creep.memory.role ==
     'builder');
