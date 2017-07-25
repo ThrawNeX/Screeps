@@ -9,10 +9,13 @@ module.exports.loop = function() {
   // Spawn Control
   if (utility.getHarvestersAmount() < 5) {
     utility.spawnHarverster();
+    console.log("New Harvester");
   } else if (utility.getBuildersAmount() < 1) {
     utility.spawnUpgrader();
+    console.log("New Upgrader");
   } else if (utility.getUpgradersAmount() < 1) {
     utility.spawnBuilder();
+    console.log("New Builder");
   }
 
   //Sorgt dafür das Creeps agieren.

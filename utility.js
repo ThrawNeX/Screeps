@@ -33,7 +33,7 @@ utility.spawnUpgrader = function() {
 
 //Memory cleaning
 // gestorbene Creeps haben noch einen Memory dieser muss gelöscht werden
-utility.memoryCleaning = function() {
+utility.garbageCollecting = function() {
   for (var name in Memory.creeps) {
     if (!Game.creeps[name]) {
       delete Memory.creeps[name];
