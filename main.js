@@ -7,6 +7,8 @@ var utility = require('utility');
 module.exports.loop = function() {
 
   // Spawn Control
+
+  //TODO: get Methoden haben keinen return type
   if (utility.getHarvestersAmount() < 5) {
     utility.spawnHarverster();
     console.log("New Harvester");
