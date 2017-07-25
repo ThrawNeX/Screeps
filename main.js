@@ -13,6 +13,8 @@ module.exports.loop = function() {
   } else if (utility.getUpgradersAmount() < 1) {
     utility.spawnUpgrader();
   }
+
+  console.log(utility.getUpgradersAmount());
   //else if (utility.getBuildersAmount() < 1) {
   //   utility.spawnBuilder();
   // }
