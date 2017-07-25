@@ -1,15 +1,18 @@
 var utility = {}
 
 utility.getUpgradersAmount = function() {
-  return upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
+  return _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
+  // return upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
 }
 
 utility.getBuildersAmount = function() {
-  return builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
+  return _.sum(Game.creeps, (c) => c.memory.role == 'builder');
+  // return builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
 }
 
 utility.getHarvestersAmount = function() {
-  return harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+  return _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
+  // return harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
 }
 
 utility.spawnHarverster = function() {
