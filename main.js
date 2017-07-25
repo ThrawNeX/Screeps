@@ -1,5 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
+var roleBuilder = require('role.builder');
+
 
 module.exports.loop = function() {
 
@@ -13,8 +15,13 @@ module.exports.loop = function() {
     if (creep.memory.role == 'upgrader') {
       roleUpgrader.run(creep);
     }
+
+    if (creep.memory.role == 'builder') {
+      roleBuilder.run(creep);
+    }
   }
 
+  test();
   spawnControlHarvester();
   spawnControlUpgrader();
   memoryCleaning();
@@ -33,6 +40,14 @@ module.exports.loop = function() {
 
 
 }
+
+
+function test() {
+  console.log("asdf");
+
+
+}
+
 
 //Sicherstellen das es immer 2 Harvester gibt
 function spawnControlHarvester() {
