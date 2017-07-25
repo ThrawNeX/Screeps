@@ -48,5 +48,5 @@ var utility = {
   }
 
 
-}
+};
 mode.exports = utility;
