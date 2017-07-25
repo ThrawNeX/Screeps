@@ -10,9 +10,6 @@ utility.getUpgradersAmount = function() {
 }
 
 
-function getUpgradersAmount() {
-
-}
 
 function getBuildersAmount() {
   var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
@@ -55,4 +52,4 @@ function memoryCleaning() {
 
 
 
-mode.exports = utility;
+module.exports = utility;
