@@ -1,6 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
+var roleRepairer = require('role.repairer')
 var utility = require('utility');
 
 // Main Loop
@@ -9,11 +10,12 @@ module.exports.loop = function() {
   // Spawn Control
   if (utility.getHarvestersAmount() < 5) {
     utility.spawnHarverster();
-
   } else if (utility.getUpgradersAmount() < 5) {
     utility.spawnUpgrader();
-  } else if (utility.getBuildersAmount() < 2) {
+  } else if (utility.getBuildersAmount() < 3) {
     utility.spawnBuilder();
+  } else if (utility.getRepairersAmount() < 2) {
+    utility.spawnRepairer();
   }
 
   console.log(utility.getUpgradersAmount());
