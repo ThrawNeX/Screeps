@@ -8,13 +8,13 @@ var utility = require('utility');
 module.exports.loop = function() {
 
   // Spawn Control
-  if (utility.getHarvestersAmount() < 5) {
+  if (utility.getHarvestersAmount() < 10) {
     utility.spawnHarverster();
-  } else if (utility.getUpgradersAmount() < 5) {
+  } else if (utility.getUpgradersAmount() < 10) {
     utility.spawnUpgrader();
-  } else if (utility.getBuildersAmount() < 3) {
+  } else if (utility.getBuildersAmount() < 5) {
     utility.spawnBuilder();
-  } else if (utility.getRepairersAmount() < 2) {
+  } else if (utility.getRepairersAmount() < 5) {
     utility.spawnRepairer();
   }
 
