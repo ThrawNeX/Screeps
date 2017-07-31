@@ -15,7 +15,7 @@ module.exports.loop = function() {
     utility.spawnUpgrader();
   } else if (utility.getBuildersAmount() < 7) {
     utility.spawnBuilder();
-  } else if (utility.getRepairersAmount() < 2) {
+  } else if (utility.getRepairersAmount() < 0) {
     utility.spawnRepairer();
   }
 
