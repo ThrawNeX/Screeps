@@ -45,7 +45,7 @@ utility.spawnBuilder = function() {
 
 utility.spawnUpgrader = function() {
   console.log("New Upgrader");
-  var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE, MOVE], undefined, {
+  var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, CARRY, MOVE, MOVE], undefined, {
     role: 'upgrader'
   });
 
