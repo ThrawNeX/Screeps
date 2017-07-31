@@ -11,9 +11,9 @@ module.exports.loop = function() {
   // Spawn Control
   if (utility.getHarvestersAmount() < 2) {
     utility.spawnHarverster();
-  } else if (utility.getUpgradersAmount() < 3) {
+  } else if (utility.getUpgradersAmount() < 5) {
     utility.spawnUpgrader();
-  } else if (utility.getBuildersAmount() < 3) {
+  } else if (utility.getBuildersAmount() < 7) {
     utility.spawnBuilder();
   } else if (utility.getRepairersAmount() < 2) {
     utility.spawnRepairer();
