@@ -20,8 +20,8 @@ var roleBuilder = {
       var targets = creep.room.findClosestByRange(FIND_CONSTRUCTION_SITES);
 
       if (targets.length) {
-        if (creep.build(targets[1]) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(targets[1], {
+        if (creep.build(targets) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(targets, {
             visualizePathStyle: {
               stroke: '#ffffff'
             }
