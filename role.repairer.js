@@ -22,7 +22,7 @@ var roleRepairer = {
     if (creep.memory.repair) {
 
       //nächstes Ziel finden
-      var targets = creep.room.findClosestByRange(FIND_STRUCTURES, {
+      var targets = creep.room.find(FIND_STRUCTURES, {
         filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
       });
 
