@@ -9,13 +9,13 @@ var utility = require('utility');
 module.exports.loop = function() {
 
   // Spawn Control
-  if (utility.getHarvestersAmount() < 10) {
+  if (utility.getHarvestersAmount() < 5) {
     utility.spawnHarverster();
-  } else if (utility.getUpgradersAmount() < 10) {
+  } else if (utility.getUpgradersAmount() < 3) {
     utility.spawnUpgrader();
-  } else if (utility.getBuildersAmount() < 5) {
+  } else if (utility.getBuildersAmount() < 3) {
     utility.spawnBuilder();
-  } else if (utility.getRepairersAmount() < 5) {
+  } else if (utility.getRepairersAmount() < 2) {
     utility.spawnRepairer();
   }
 
@@ -47,7 +47,7 @@ module.exports.loop = function() {
   //Spawn Nachricht - unnötig?
   if (Game.spawns['Spawn1'].spawning) {
     var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name];
-    Game.spawns['Spawn1'].room.visual.text('🛠️' + spawningCreep.memory.role,
+    Game.spawns['Spawn1'].room.visual.text(spawningCreep.memory.role,
       Game.spawns['Spawn1'].pos.x + 1,
       Game.spawns['Spawn1'].pos.y, {
         align: 'left',

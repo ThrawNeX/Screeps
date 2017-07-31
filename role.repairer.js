@@ -6,21 +6,26 @@ var roleRepairer = {
   /** @param {Creep} creep **/
   run: function(creep) {
 
-    if (creep.memory.building && creep.carry.energy == 0) {
-      creep.memory.building = false;
+    // Keine Energie deshalb farmen
+    if (creep.memory.repair == true && creep.carry.energy == 0) {
+      creep.memory.repair = false;
       creep.say('harvest');
     }
-    if (!creep.memory.building && creep.carry.energy == creep.carryCapacity) {
-      creep.memory.building = true;
+
+    //Energie voll - deshalb umschalten auf Reparieren
+    if (creep.memory.repair == false && creep.carry.energy == creep.carryCapacity) {
+      creep.memory.repair = true;
       creep.say('repair');
     }
 
-    if (creep.memory.building) {
-      var targets = creep.room.find(FIND_STRUCTURES, {
+    //Wenn repair true
+    if (creep.memory.repair) {
+      var targets = creep.room.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
       });
+
       if (targets.length) {
-        if (creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
+        if (creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
           creep.moveTo(targets[0], {
             visualizePathStyle: {
               stroke: '#ffffff'
