@@ -39,8 +39,8 @@ var roleBuilder = {
         });
       }
       if (creep.harvest(sources[i] == ERR_NO_PATH)) {
-        console.log("asdf");
-        i = 1;
+
+        i = (i + 1) % 2;
 
       }
     }
