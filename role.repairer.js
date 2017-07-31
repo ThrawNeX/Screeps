@@ -20,13 +20,16 @@ var roleRepairer = {
 
     //Wenn repair true
     if (creep.memory.repair) {
+
+      //nächstes Ziel finden
       var targets = creep.room.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
       });
 
-      if (targets.length) {
-        if (creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(targets[0], {
+
+      if (targets != undefined) {
+        if (creep.repair(targets) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(targets, {
             visualizePathStyle: {
               stroke: '#ffffff'
             }
