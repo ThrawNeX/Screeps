@@ -29,7 +29,7 @@ utility.spawnHarverster = function() {
 
 utility.spawnSuperHarverster = function() {
   console.log("New Harvester");
-  var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE], undefined, {
+  var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, WORK, CARRY, MOVE], undefined, {
     role: 'harvester'
   });
 }
