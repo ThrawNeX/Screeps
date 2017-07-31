@@ -33,6 +33,8 @@ utility.spawnBuilder = function() {
     undefined, {
       role: 'builder'
     });
+  var creep = Game.creeps[newName];
+  creep.memory.building = false;
 }
 
 utility.spawnUpgrader = function() {
@@ -40,6 +42,9 @@ utility.spawnUpgrader = function() {
   var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE, MOVE], undefined, {
     role: 'upgrader'
   });
+  var creep = Game.creeps[newName];
+  creep.memory.upgrading = false;
+
 }
 
 utility.spawnRepairer = function() {
@@ -47,6 +52,9 @@ utility.spawnRepairer = function() {
   var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE], undefined, {
     role: 'repairer'
   });
+  var creep = Game.creeps[newName];
+  creep.memory.repair = false;
+
 }
 
 //Memory cleaning

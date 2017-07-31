@@ -13,7 +13,7 @@ var roleRepairer = {
     }
 
     //Energie voll - deshalb umschalten auf Reparieren
-    if (creep.memory.repair == false && creep.carry.energy == creep.carryCapacity) {
+    if (!creep.memory.repair && creep.carry.energy == creep.carryCapacity) {
       creep.memory.repair = true;
       creep.say('repair');
     }
