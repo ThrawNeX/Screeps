@@ -9,7 +9,7 @@ var utility = require('utility');
 module.exports.loop = function() {
 
   // Spawn Control
-  if (utility.getHarvestersAmount() < 5) {
+  if (utility.getHarvestersAmount() < 2) {
     utility.spawnHarverster();
   } else if (utility.getUpgradersAmount() < 3) {
     utility.spawnUpgrader();
@@ -19,7 +19,10 @@ module.exports.loop = function() {
     utility.spawnRepairer();
   }
 
-  console.log(utility.getUpgradersAmount());
+  console.log("Upgrader: " + utility.getUpgradersAmount());
+  console.log("Harvester: " + utility.getHarvestersAmount());
+  console.log("Repairer: " + utility.getRepairersAmount());
+  console.log("Builder: " + utility.getBuildersAmount());
 
 
   //Sorgt dafür das Creeps agieren.
