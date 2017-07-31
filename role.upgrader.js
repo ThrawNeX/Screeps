@@ -12,17 +12,6 @@ var roleUpgrader = {
       creep.say('upgrade');
     }
 
-    // if (creep.memory.upgrading == true) {
-    //   var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-    //     filter: (s) => (s.structureType == STRUCTURE_SPAWN || s.structureType == STRUCTURE_EXTENSION || s.structureType ==
-    //       STRUCTURE_TOWER) && s.energy < s.energyCapacity
-    //   });
-    //
-    //
-    // }
-
-
-
     if (creep.memory.upgrading) {
       if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
         creep.moveTo(creep.room.controller, {
