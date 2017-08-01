@@ -3,7 +3,9 @@ var roleSuperHarvester = require('role.SuperHarvester');
 var roleUpgrader = require('role.upgrader');
 var roleSuperUpgrader = require('role.SuperUpgrader');
 var roleBuilder = require('role.builder');
+var roleSuperBuilder = require('role.SuperBuilder');
 var roleRepairer = require('role.repairer');
+var roleSuperRepairer = require('role.SuperRepairer');
 var utility = require('utility');
 
 
@@ -30,14 +32,14 @@ module.exports.loop = function() {
     console.log("Phase 2");
     if (utility.getSuperHarvesterAmount() < 2) {
       utility.spawnSuperHarverster();
-    } else if (utility.getHarvestersAmount() < 4)
+    } else if (utility.getHarvestersAmount() < 3)
       utility.spawnHarverster();
     else if (utility.getSuperUpgraderAmount() < 5) {
       utility.spawnSuperUpgrader();
     } else if (utility.getSuperBuilderAmount() < 3) {
       utility.spawnSuperBuilder();
-    } else if (utility.getRepairersAmount() < 2) {
-      utility.spawnRepairer();
+    } else if (utility.getSuperRepairersAmount() < 2) {
+      utility.spawnSuperRepairer();
     }
 
   }
@@ -70,8 +72,16 @@ module.exports.loop = function() {
       roleBuilder.run(creep);
     }
 
+    if (creep.memory.role == 'SuperBuilder') {
+      roleSuperBuilder.run(creep);
+    }
+
     if (creep.memory.role == 'repairer') {
       roleRepairer.run(creep);
+    }
+
+    if (creep.memory.role == 'SuperRepairer') {
+      roleSuperRepairer.run(creep);
     }
   }
 
