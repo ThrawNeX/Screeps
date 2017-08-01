@@ -75,9 +75,27 @@ utility.spawnUpgrader = function() {
 
 }
 
+utility.spawnSuperUpgrader = function() {
+  console.log("New Upgrader");
+  var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, MOVE, MOVE], undefined, {
+    role: 'upgrader'
+  });
+
+
+}
+
 utility.spawnRepairer = function() {
   console.log("New Repairer");
   var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE], undefined, {
+    role: 'repairer'
+  });
+
+
+}
+
+utility.spawnSuperRepairer = function() {
+  console.log("New Repairer");
+  var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY MOVE], undefined, {
     role: 'repairer'
   });
 

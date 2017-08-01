@@ -25,14 +25,15 @@ module.exports.loop = function() {
 
   } else {
     //Mind. 4 Extensions.
+    console.log("Phase 2");
     if (utility.getHarvestersAmount() < 3) {
       utility.spawnSuperHarverster();
     } else if (utility.getUpgradersAmount() < 5) {
-      utility.spawnUpgrader();
+      utility.spawnSuperUpgrader();
     } else if (utility.getBuildersAmount() < 3) {
       utility.spawnSuperBuilder();
     } else if (utility.getRepairersAmount() < 2) {
-      utility.spawnRepairer();
+      utility.spawnSuperRepairer();
     }
 
   }
