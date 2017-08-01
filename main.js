@@ -27,7 +27,7 @@ module.exports.loop = function() {
   } else {
     //Mind. 4 Extensions.
     console.log("Phase 2");
-    if (utility.getSuperHarvestersAmount() < 2) {
+    if (utility.getSuperHarvesterAmount() < 2) {
       utility.spawnSuperHarverster();
     } else if (utility.getHarvestersAmount() < 4)
       utility.spawnHarverster();
