@@ -17,6 +17,14 @@ module.exports.loop = function() {
 
   if (utility.getExtensionAmount < 4) {
     // Phase 1
+
+
+    console.log("Upgrader: " + utility.getUpgradersAmount());
+    console.log("Harvester: " + utility.getHarvestersAmount());
+    console.log("Repairer: " + utility.getRepairersAmount());
+    console.log("Builder: " + utility.getBuildersAmount());
+
+    //Spawn logic phase 1
     if (utility.getHarvestersAmount() < 2) {
       utility.spawnHarverster();
     } else if (utility.getUpgradersAmount() < 5) {
@@ -29,7 +37,15 @@ module.exports.loop = function() {
 
   } else {
     //Mind. 4 Extensions.
-    console.log("Phase 2");
+
+    console.log("SuperUpgrader: " + utility.getSuperUpgraderAmount());
+    console.log("Harvester: " + utility.getHarvestersAmount());
+    console.log("SuperHarvester: " + utility.getSuperHarvesterAmount());
+    console.log("SuperRepairer: " + utility.getSuperRepairersAmount());
+    console.log("SuperBuilder: " + utility.getSuperBuilderAmount());
+
+
+    //Spawn logic phase 1
     if (utility.getSuperHarvesterAmount() < 2) {
       utility.spawnSuperHarverster();
     } else if (utility.getHarvestersAmount() < 3)
@@ -44,10 +60,7 @@ module.exports.loop = function() {
 
   }
 
-  console.log("Upgrader: " + utility.getUpgradersAmount());
-  console.log("Harvester: " + utility.getHarvestersAmount());
-  console.log("Repairer: " + utility.getRepairersAmount());
-  console.log("Builder: " + utility.getBuildersAmount());
+
 
   //Sorgt dafür das Creeps agieren.
   for (var name in Game.creeps) {
