@@ -31,9 +31,9 @@ module.exports.loop = function() {
       utility.spawnSuperHarverster();
     } else if (utility.getHarvestersAmount() < 4)
       utility.spawnHarverster();
-    else if (utility.getSuperUpgradersAmount() < 5) {
+    else if (utility.getSuperUpgraderAmount() < 5) {
       utility.spawnSuperUpgrader();
-    } else if (utility.getSuperBuildersAmount() < 3) {
+    } else if (utility.getSuperBuilderAmount() < 3) {
       utility.spawnSuperBuilder();
     } else if (utility.getSuperRepairersAmount() < 2) {
       utility.spawnSuperRepairer();
