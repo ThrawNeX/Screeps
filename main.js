@@ -36,8 +36,8 @@ module.exports.loop = function() {
       utility.spawnSuperUpgrader();
     } else if (utility.getSuperBuilderAmount() < 3) {
       utility.spawnSuperBuilder();
-    } else if (utility.getSuperRepairersAmount() < 2) {
-      utility.spawnSuperRepairer();
+    } else if (utility.getRepairersAmount() < 2) {
+      utility.spawnRepairer();
     }
 
   }
