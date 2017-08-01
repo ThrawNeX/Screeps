@@ -9,14 +9,32 @@ var utility = require('utility');
 module.exports.loop = function() {
 
   // Spawn Control
-  if (utility.getHarvestersAmount() < 2) {
-    utility.spawnHarverster();
-  } else if (utility.getUpgradersAmount() < 5) {
-    utility.spawnUpgrader();
-  } else if (utility.getBuildersAmount() < 7) {
-    utility.spawnBuilder();
-  } else if (utility.getRepairersAmount() < 2) {
-    utility.spawnRepairer();
+
+
+  if (utility.getExtensionAmount < 4) {
+
+    if (utility.getHarvestersAmount() < 2) {
+      utility.spawnHarverster();
+    } else if (utility.getUpgradersAmount() < 5) {
+      utility.spawnUpgrader();
+    } else if (utility.getBuildersAmount() < 7) {
+      utility.spawnBuilder();
+    } else if (utility.getRepairersAmount() < 2) {
+      utility.spawnRepairer();
+    }
+
+  } else {
+    //Mind. 4 Extensions.
+    if (utility.getHarvestersAmount() < 3) {
+      utility.spawnSuperHarverster();
+    } else if (utility.getUpgradersAmount() < 5) {
+      utility.spawnUpgrader();
+    } else if (utility.getBuildersAmount() < 3) {
+      utility.spawnSuperBuilder();
+    } else if (utility.getRepairersAmount() < 2) {
+      utility.spawnRepairer();
+    }
+
   }
 
   console.log("Upgrader: " + utility.getUpgradersAmount());
