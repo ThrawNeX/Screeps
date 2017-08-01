@@ -63,7 +63,6 @@ var roleSuperBuilder = {
       }
     }
   }
-}
 };
 
 module.exports = roleSuperBuilder;

@@ -71,7 +71,6 @@ var roleSuperRepairer = {
       }
     }
   }
-}
 };
 
 module.exports = roleSuperRepairer;
