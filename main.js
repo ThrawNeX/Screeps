@@ -13,8 +13,6 @@ var utility = require('utility');
 module.exports.loop = function() {
 
   // Spawn Control
-
-
   if (utility.getExtensionAmount < 4) {
     // Phase 1
 
@@ -46,13 +44,13 @@ module.exports.loop = function() {
 
 
     //Spawn logic phase 1
-    if (utility.getSuperHarvesterAmount() < 2) {
+    if (utility.getSuperHarvesterAmount() < 3) {
       utility.spawnSuperHarverster();
     } else if (utility.getHarvestersAmount() < 3)
       utility.spawnHarverster();
-    else if (utility.getSuperUpgraderAmount() < 5) {
+    else if (utility.getSuperUpgraderAmount() < 7) {
       utility.spawnSuperUpgrader();
-    } else if (utility.getSuperBuilderAmount() < 3) {
+    } else if (utility.getSuperBuilderAmount() < 2) {
       utility.spawnSuperBuilder();
     } else if (utility.getSuperRepairersAmount() < 2) {
       utility.spawnSuperRepairer();
