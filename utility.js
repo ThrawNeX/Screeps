@@ -95,7 +95,7 @@ utility.spawnRepairer = function() {
 
 utility.spawnSuperRepairer = function() {
   console.log("New Repairer");
-  var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY MOVE], undefined, {
+  var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, MOVE], undefined, {
     role: 'repairer'
   });
 
