@@ -41,7 +41,7 @@ var roleSuperRepairer = {
       var structures = creep.room.find(FIND_STRUCTURES, {
         filter: (structure) => {
           return (structure.structureType == STRUCTURE_CONTAINER) &&
-            structure.energy > 0;
+            structure.store[RESOURCE_ENERGY] > 0;
         }
       });
 
