@@ -39,39 +39,39 @@ var roleSuperRepairer = {
       }
     } else {
       var structures = creep.room.find(FIND_STRUCTURES, {
-          filter: (structure) => {
-            return (structure.structureType == STRUCTURE_CONTAINER &&
-              structure.store > 0;
+        filter: (structure) => {
+          return (structure.structureType == STRUCTURE_CONTAINER) &&
+            structure.energy > 0;
+        }
+      });
+
+      if (structures.length > 0) {
+        var target = creep.pos.findClosestByRange(structures);
+        if (creep.withdrawn(target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(target, {
+            visualizePathStyle: {
+              stroke: '#ffaa00'
             }
           });
-
-        if (structures.length > 0) {
-          var target = creep.pos.findClosestByRange(structures);
-          if (creep.withdrawn(target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-            creep.moveTo(target, {
-              visualizePathStyle: {
-                stroke: '#ffaa00'
-              }
-            });
-          }
+        }
 
 
-        } else {
+      } else {
 
 
 
-          var sources = creep.room.find(FIND_SOURCES);
-          if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-            creep.moveTo(sources[0], {
-              visualizePathStyle: {
-                stroke: '#ffaa00'
-              }
-            });
-          }
+        var sources = creep.room.find(FIND_SOURCES);
+        if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(sources[0], {
+            visualizePathStyle: {
+              stroke: '#ffaa00'
+            }
+          });
         }
       }
     }
   }
+}
 };
 
 module.exports = roleSuperRepairer;
