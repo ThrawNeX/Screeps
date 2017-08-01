@@ -1,4 +1,5 @@
 var roleHarvester = require('role.harvester');
+var roleSuperHarvester = require('role.SuperHarvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
@@ -26,13 +27,15 @@ module.exports.loop = function() {
   } else {
     //Mind. 4 Extensions.
     console.log("Phase 2");
-    if (utility.getHarvestersAmount() < 3) {
+    if (utility.getSuperHarvestersAmount() < 2) {
       utility.spawnSuperHarverster();
-    } else if (utility.getUpgradersAmount() < 5) {
+    } else if (utility.getHarvestersAmount() < 4)
+      utility.spawnHarverster();
+    else if (utility.getSuperUpgradersAmount() < 5) {
       utility.spawnSuperUpgrader();
-    } else if (utility.getBuildersAmount() < 3) {
+    } else if (utility.getSuperBuildersAmount() < 3) {
       utility.spawnSuperBuilder();
-    } else if (utility.getRepairersAmount() < 2) {
+    } else if (utility.getSuperRepairersAmount() < 2) {
       utility.spawnSuperRepairer();
     }
 

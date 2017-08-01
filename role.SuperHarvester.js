@@ -1,12 +1,12 @@
-var roleHarvester = {
+var roleSuperHarvester = {
 
   /** @param {Creep} creep **/
   run: function(creep) {
 
     if (creep.carry.energy < creep.carryCapacity) {
       var sources = creep.room.find(FIND_SOURCES);
-      if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-        creep.moveTo(sources[0], {
+      if (creep.harvest(sources[1]) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(sources[1], {
           visualizePathStyle: {
             stroke: '#ffaa00'
           }
@@ -18,7 +18,7 @@ var roleHarvester = {
       var targets = creep.room.find(FIND_STRUCTURES, {
         filter: (structure) => {
           return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType ==
-              STRUCTURE_SPAWN) &&
+              STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER) &&
             structure.energy < structure.energyCapacity;
         }
       });
@@ -38,4 +38,4 @@ var roleHarvester = {
   }
 };
 
-module.exports = roleHarvester;
+module.exports = roleSuperHarvester;

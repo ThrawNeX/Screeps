@@ -20,6 +20,21 @@ utility.getRepairersAmount = function() {
   // return harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
 }
 
+utility.getSuperHarvesterAmount = function() {
+  return _.sum(Game.creeps, (c) => c.memory.role == 'SuperHarvester');
+}
+
+utility.getSuperBuilderAmount = function() {
+  return _.sum(Game.creeps, (c) => c.memory.role == 'SuperBuilder');
+}
+
+utility.getSuperUpgraderAmount = function() {
+  return _.sum(Game.creeps, (c) => c.memory.role == 'SuperUpgrader');
+}
+
+utility.getSuperRepairersAmount = function() {
+  return _.sum(Game.creeps, (c) => c.memory.role == 'SuperRepairer');
+}
 
 utility.getExtensionAmount = function() {
   var extensionCount = 0;
@@ -43,7 +58,7 @@ utility.spawnHarverster = function() {
 utility.spawnSuperHarverster = function() {
   console.log("New Harvester");
   var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, WORK, CARRY, MOVE], undefined, {
-    role: 'harvester'
+    role: 'SuperHarvester'
   });
 }
 
@@ -60,7 +75,7 @@ utility.spawnSuperBuilder = function() {
   console.log("New Builder");
   var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, WORK, CARRY, CARRY, MOVE],
     undefined, {
-      role: 'builder'
+      role: 'SuperBuilder'
     });
 
 }
@@ -78,7 +93,7 @@ utility.spawnUpgrader = function() {
 utility.spawnSuperUpgrader = function() {
   console.log("New Upgrader");
   var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, MOVE, MOVE], undefined, {
-    role: 'upgrader'
+    role: 'SuperUpgrader'
   });
 
 
@@ -96,7 +111,7 @@ utility.spawnRepairer = function() {
 utility.spawnSuperRepairer = function() {
   console.log("New Repairer");
   var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, MOVE], undefined, {
-    role: 'repairer'
+    role: 'SuperRepairer'
   });
 
 
