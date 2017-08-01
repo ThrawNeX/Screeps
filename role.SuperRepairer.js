@@ -47,7 +47,7 @@ var roleSuperRepairer = {
 
       if (structures.length > 0) {
         var target = creep.pos.findClosestByRange(structures);
-        if (creep.withdrawn(target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        if (creep.withdraw(target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
           creep.moveTo(target, {
             visualizePathStyle: {
               stroke: '#ffaa00'
