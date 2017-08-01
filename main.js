@@ -1,6 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleSuperHarvester = require('role.SuperHarvester');
 var roleUpgrader = require('role.upgrader');
+var roleSuperUpgrader = require('role.SuperUpgrader');
 var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
 var utility = require('utility');
@@ -55,6 +56,10 @@ module.exports.loop = function() {
 
     if (creep.memory.role == 'SuperHarvester') {
       roleSuperHarvester.run(creep);
+    }
+
+    if (creep.memory.role == 'SuperUpgrader') {
+      roleSuperUpgrader.run(creep);
     }
 
     if (creep.memory.role == 'upgrader') {
