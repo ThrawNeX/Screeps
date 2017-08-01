@@ -53,6 +53,10 @@ module.exports.loop = function() {
       roleHarvester.run(creep);
     }
 
+    if (creep.memory.role == 'SuperHarvester') {
+      roleSuperHarvester.run(creep);
+    }
+
     if (creep.memory.role == 'upgrader') {
       roleUpgrader.run(creep);
     }
