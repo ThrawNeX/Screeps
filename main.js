@@ -23,7 +23,7 @@ module.exports.loop = function() {
   console.log("Harvester: " + utility.getHarvestersAmount());
   console.log("Repairer: " + utility.getRepairersAmount());
   console.log("Builder: " + utility.getBuildersAmount());
-
+  console.log(utility.getExtensionAmount());
 
   //Sorgt dafür das Creeps agieren.
   for (var name in Game.creeps) {

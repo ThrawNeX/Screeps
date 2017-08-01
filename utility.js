@@ -20,6 +20,20 @@ utility.getRepairersAmount = function() {
   // return harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
 }
 
+
+utility.getExtensionAmount = function() {
+  var extensionCount = 0;
+  for (var roomName in Game.rooms) {
+    extensionCount += Game.rooms[roomName].find(FIND_MY_STRUCTURES, {
+        filter: function(object) {
+          return object.structureType === STRUCTURE_EXTENSION;
+        }).length;
+    }
+
+  }
+  return extensionCount;
+}
+
 utility.spawnHarverster = function() {
   console.log("New Harvester");
   var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE], undefined, {
