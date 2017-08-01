@@ -33,7 +33,7 @@ var roleSuperBuilder = {
       var structures = creep.room.find(FIND_STRUCTURES, {
           filter: (structure) => {
             return (structure.structureType == STRUCTURE_CONTAINER &&
-              structure.energy > 0;
+              structure.store > 0;
             }
           });
 
