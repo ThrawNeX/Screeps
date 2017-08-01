@@ -12,7 +12,7 @@ module.exports.loop = function() {
 
 
   if (utility.getExtensionAmount < 4) {
-
+    // Phase 1
     if (utility.getHarvestersAmount() < 2) {
       utility.spawnHarverster();
     } else if (utility.getUpgradersAmount() < 5) {
@@ -42,7 +42,6 @@ module.exports.loop = function() {
   console.log("Harvester: " + utility.getHarvestersAmount());
   console.log("Repairer: " + utility.getRepairersAmount());
   console.log("Builder: " + utility.getBuildersAmount());
-  console.log(utility.getExtensionAmount());
 
   //Sorgt dafür das Creeps agieren.
   for (var name in Game.creeps) {
