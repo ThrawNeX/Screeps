@@ -17,8 +17,7 @@ var roleSuperHarvester = {
       // erstellt Liste mit den Strukturen im raum
       var targets = creep.room.find(FIND_STRUCTURES, {
         filter: (structure) => {
-          return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType ==
-              STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER) &&
+          return (structure.structureType == STRUCTURE_CONTAINER) &&
             structure.store[RESOURCE_ENERGY] < structure.storeCapacity;
         }
       });
