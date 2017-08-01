@@ -25,13 +25,36 @@ var roleUpgrader = {
         });
       }
     } else {
-      var sources = creep.room.find(FIND_SOURCES);
-      if (creep.harvest(sources[1]) == ERR_NOT_IN_RANGE) {
-        creep.moveTo(sources[1], {
-          visualizePathStyle: {
-            stroke: '#ffaa00'
-          }
-        });
+      var structures = creep.room.find(FIND_STRUCTURES, {
+        filter: (structure) => {
+          return (structure.structureType == STRUCTURE_CONTAINER) &&
+            structure.store[RESOURCE_ENERGY] > 0;
+        }
+      });
+
+      if (structures.length > 0) {
+        var target = creep.pos.findClosestByRange(structures);
+        if (creep.withdraw(target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(target, {
+            visualizePathStyle: {
+              stroke: '#ffaa00'
+            }
+          });
+        }
+
+
+      } else {
+
+
+
+        var sources = creep.room.find(FIND_SOURCES);
+        if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(sources[0], {
+            visualizePathStyle: {
+              stroke: '#ffaa00'
+            }
+          });
+        }
       }
     }
   }
